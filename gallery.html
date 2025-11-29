@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ra Mampang Infinite Gallery</title>
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- Infinite Gallery Section -->
+    <section class="infinite-gallery">
+      <div class="infinite-gallery-inner" id="gallery-inner">
+        <div class="row">
+          <img
+            src="/assets/Denah-Mampang-Office-Ganjil-2_400_550.jpg"
+            alt="Office Ganjil 1"
+          />
+          <img
+            src="/assets/Denah-Mampang-Office-Genap-2_400_550.jpg"
+            alt="Office Genap 1"
+          />
+          <img src="/assets/Denah-Revisi-2579_400_550.jpg" alt="Revisi 2579" />
+        </div>
+        <div class="row">
+          <img src="/assets/Denah-Revisi-368_400_550.jpg" alt="Revisi 368" />
+          <img src="/assets/external/ATM-Center.jpg" alt="ATM Center" />
+          <img src="/assets/external/Balcony-Area.jpg" alt="Balcony Area" />
+        </div>
+        <div class="row">
+          <img
+            src="/assets/external/Bicycle-Parking.jpg"
+            alt="Bicycle Parking"
+          />
+          <img src="/assets/external/galerry-4-upload.jpg" alt="Gallery 4" />
+          <img src="/assets/external/galerry-5-up.jpg" alt="Gallery 5" />
+        </div>
+        <div class="row">
+          <img src="/assets/external/galerry-6-up.jpg" alt="Gallery 6" />
+          <img
+            src="/assets/external/Outdoor-Food-Court-1.jpg"
+            alt="Food Court 1"
+          />
+          <img
+            src="/assets/external/Outdoor-Food-Court.jpg"
+            alt="Food Court 2"
+          />
+        </div>
+        <div class="row">
+          <img
+            src="/assets/external/Ra-Mampang-Roftop-1of3.jpg"
+            alt="Roftop 1"
+          />
+          <img
+            src="/assets/external/Ra-Mampang-Roftop-2of3.jpg"
+            alt="Roftop 2"
+          />
+          <img
+            src="/assets/external/Ra-Mampang-Roftop-3of3.jpg"
+            alt="Roftop 3"
+          />
+        </div>
+        <div class="row">
+          <img src="/assets/interior/galeery-1-up.jpg" alt="Gallery 1" />
+          <img src="/assets/interior/galerry-2-up.jpg" alt="Gallery 2" />
+          <img src="/assets/interior/galerry-3-up.jpg" alt="Gallery 3" />
+        </div>
+        <div class="row">
+          <img src="/assets/interior/office1.jpg" alt="Office 1" />
+          <img src="/assets/interior/office2.jpg" alt="Office 2" />
+          <img src="/assets/interior/office3.jpg" alt="Office 3" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox Overlay -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="" />
+      <div class="caption"></div>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="./dist/js/script.js"></script>
+    <script>
+      loadComponent("navbar", "./components/navbar.html");
+      loadComponent("footer", "./components/footer.html");
+
+      // Infinite Scroll Duplication
+      const galleryInner = document.getElementById("gallery-inner");
+      const rows = Array.from(galleryInner.children);
+      rows.forEach((row) => galleryInner.appendChild(row.cloneNode(true)));
+
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector(".lightbox-img");
+      const caption = lightbox.querySelector(".caption");
+      let currentIndex = 0;
+      let galleryImages = Array.from(
+        document.querySelectorAll(".infinite-gallery-inner img")
+      );
+
+      function showLightbox(index) {
+        currentIndex = index;
+        const img = galleryImages[index];
+        lightboxImg.src = img.src;
+        caption.textContent = img.alt;
+        lightbox.style.display = "flex";
+      }
+
+      galleryImages.forEach((img, index) => {
+        img.addEventListener("click", () => showLightbox(index));
+      });
+
+      // Close lightbox
+      lightbox.querySelector(".close").addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
+
+      // Next / Prev
+      lightbox.querySelector(".next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        showLightbox(currentIndex);
+      });
+      lightbox.querySelector(".prev").addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        showLightbox(currentIndex);
+      });
+    </script>
+  </body>
+</html>

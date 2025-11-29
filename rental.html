@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ra Mampang Office</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/nm.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <!-- CSS -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome -->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+    <!-- NAVBAR -->
+
+    <!-- Rental Section -->
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>RA Mampang Tower: Price 2025</h1>
+      <p>Berikut adalah rincian biaya per bulan (per m²) dan biaya lainnya</p>
+    </div>
+    <!-- Hero Section -->
+
+    <!-- Rental Prices Section -->
+    <section class="rental-prices">
+      <div class="container">
+        <!-- LOBBY FLOOR -->
+        <div class="price-card">
+          <h2>LOBBY FLOOR</h2>
+          <p><strong>Area:</strong> 113 sqm</p>
+          <p><strong>Rental Charge:</strong></p>
+          <ul>
+            <li>Bare Office: 210.000/sqm/month</li>
+            <li>Full Furnish: 220.000/sqm/month</li>
+          </ul>
+          <p><strong>Service Charge:</strong> 65.000/sqm/month</p>
+        </div>
+
+        <!-- TYPICAL 1 -->
+        <div class="price-card">
+          <h2>TYPICAL 1</h2>
+          <p><strong>Area:</strong> 523,883 sqm</p>
+          <p><strong>Rental Charge:</strong></p>
+          <ul>
+            <li>Bare Office: 145.000/sqm/month</li>
+            <li>Full Furnish: 155.000/sqm/month</li>
+          </ul>
+          <p><strong>Service Charge:</strong> 65.000/sqm/month</p>
+        </div>
+
+        <!-- TYPICAL 2 (BALCONY) -->
+        <div class="price-card">
+          <h2>TYPICAL 2 (BALCONY)</h2>
+          <p><strong>Area:</strong> 634,12 sqm</p>
+          <p><strong>Rental Charge:</strong></p>
+          <ul>
+            <li>Bare Office: 150.000/sqm/month</li>
+            <li>Full Furnish: 160.000/sqm/month</li>
+          </ul>
+          <p><strong>Service Charge:</strong> 65.000/sqm/month</p>
+        </div>
+
+        <!-- LOBBY COMMERCIAL AREAS -->
+        <div class="price-card">
+          <h2>LOBBY COMMERCIAL AREAS</h2>
+          <p><strong>Rental Charge:</strong> 210.000/sqm/month</p>
+          <p><strong>Service Charge:</strong> 65.000/sqm/month</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Charges Section -->
+    <section class="other-charges">
+      <div class="container">
+        <h2>Biaya Lainnya</h2>
+        <ul>
+          <li>Overtime Charge: Rp 40.000/Hour/Zone</li>
+          <li>Electricity: Separately Metered/Month</li>
+        </ul>
+      </div>
+    </section>
+    <!-- Rental Secton -->
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <!-- FOOTER -->
+    <!-- JS -->
+    <script src="./dist/js/script.js"></script>
+    <script>
+      loadComponent("navbar", "./components/navbar.html");
+      loadComponent("footer", "./components/footer.html");
+    </script>
+    <!-- JS -->
+  </body>
+</html>

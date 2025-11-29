@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ra Mampang Office</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/nm.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+          Fill out the form below and we'll get back to you as soon as possible.
+        </p>
+
+        <form
+          action="https://formspree.io/f/xpwgbken"
+          method="POST"
+          class="contact-form"
+        >
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="rental">Rental Inquiry</option>
+            <option value="facility">Facility Request</option>
+            <option value="maintenance">Maintenance Request</option>
+            <option value="event">Event Booking</option>
+            <option value="others">Others</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <!-- JS -->
+    <script src="./dist/js/script.js"></script>
+    <script>
+      loadComponent("navbar", "./components/navbar.html");
+      loadComponent("footer", "./components/footer.html");
+    </script>
+  </body>
+</html>

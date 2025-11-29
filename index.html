@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ra Mampang Office</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/nm.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <!-- CSS -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome -->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+    <!-- NAVBAR -->
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <img class="hero-logo" src="/assets/logo.png" alt="Ra Mampang Office" />
+      <p>
+        RA Mampang Tower is a modern mixed-use building located in the heart of
+        Mampang, Jakarta. Featuring state-of-the-art facilities, stylish
+        interiors, and panoramic city views, it offers premium residential
+        apartments, office spaces, and retail outlets. Its strategic location
+        ensures easy access to business districts and lifestyle amenities.
+      </p>
+      <a href="about.html">Read more</a>
+    </div>
+    <!-- Hero Section -->
+
+    <!-- Facilities & Service -->
+    <section class="facilities">
+      <div class="container">
+        <h2 class="title">FACILITIES & SERVICES</h2>
+
+        <div class="facilities-grid">
+          <!-- Card 1 -->
+          <div class="facility-card">
+            <h3>INTERIOR</h3>
+            <p>Mampanng Office Facilities & Interior :</p>
+            <a href="interior.html" class="btn-read">Show More</a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="facility-card">
+            <h3>RENTAL AND RATE :</h3>
+            <p>
+              Ra Mampang : This project consists of 9 floors modern space, with
+              an outdoor food court and garden balcony.
+            </p>
+            <a href="rental.html" class="btn-read">Show More</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="facility-card">
+            <h3>EXTERIOR</h3>
+            <p>Mampanng Office Facilities & Exterior :</p>
+            <a href="exterior.html" class="btn-read">Show More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Facilities & Service -->
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <!-- FOOTER -->
+    <!-- JS -->
+    <script src="./dist/js/script.js"></script>
+    <script>
+      loadComponent("navbar", "./components/navbar.html");
+      loadComponent("footer", "./components/footer.html");
+    </script>
+    <!-- JS -->
+  </body>
+</html>

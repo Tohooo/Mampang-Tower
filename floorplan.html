@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ra Mampang Office</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/nm.png" type="image/x-icon" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./dist/css/style.css" />
+    <!-- CSS -->
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Awesome -->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+    <!-- NAVBAR -->
+
+    <!-- Floorplant Section -->
+    <section class="floorplant">
+      <div class="container">
+        <!-- Floor Typical 2,5,7,9 -->
+        <div class="floor">
+          <h2>Floor Tipical 2,5,7,9</h2>
+          <img
+            src="/assets/Denah-Revisi-2579_400_550.jpg"
+            alt="Floor Tipical 2,5,7,9"
+            class="floor-img"
+            data-index="0"
+          />
+        </div>
+
+        <!-- Floor Typical 3,6,8 -->
+        <div class="floor">
+          <h2>Floor Tipical 3,6,8</h2>
+          <img
+            src="/assets/Denah-Revisi-368_400_550.jpg"
+            alt="Floor Tipical 3,6,8"
+            class="floor-img"
+            data-index="1"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox (tetap di body, di atas semua) -->
+    <div class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="" />
+      <div class="caption"></div>
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+    <!-- FLoorPlanr -->
+    <!-- FOOTER -->
+    <div id="footer"></div>
+    <!-- FOOTER -->
+    <!-- JS -->
+    <script src="./dist/js/script.js"></script>
+    <script>
+      loadComponent("navbar", "./components/navbar.html");
+      loadComponent("footer", "./components/footer.html");
+
+      // Lightbox Floorplant
+      const floorImgs = document.querySelectorAll(".floor-img");
+      const lightbox = document.querySelector(".lightbox");
+      const lightboxImg = document.querySelector(".lightbox-img");
+      const caption = document.querySelector(".caption");
+      const closeBtn = document.querySelector(".close");
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+
+      const images = Array.from(floorImgs);
+      let currentIndex = 0;
+
+      function openLightbox(index) {
+        currentIndex = index;
+        lightbox.style.display = "flex";
+        updateLightbox();
+      }
+
+      function updateLightbox() {
+        lightboxImg.src = images[currentIndex].src;
+        caption.textContent = images[currentIndex].alt;
+      }
+
+      function closeLightbox() {
+        lightbox.style.display = "none";
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateLightbox();
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateLightbox();
+      }
+
+      floorImgs.forEach((img, index) => {
+        img.addEventListener("click", () => openLightbox(index));
+      });
+
+      closeBtn.addEventListener("click", closeLightbox);
+      prevBtn.addEventListener("click", showPrev);
+      nextBtn.addEventListener("click", showNext);
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+    </script>
+    <!-- JS -->
+  </body>
+</html>
